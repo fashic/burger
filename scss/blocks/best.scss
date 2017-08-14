@@ -1,0 +1,22 @@
+.best {
+  background: url("../../images/bg/best.jpg") center center no-repeat;
+  background-size: cover;
+  text-align: center;
+}
+
+.best__wrap {
+  height: 100%;
+  margin-top: 10%;
+}
+
+.best__icon-red {
+  fill: $red;
+}
+
+.best__icon-yellow {
+  fill: $yellow;
+}
+
+.best__icon-green {
+  fill: #8ac03e;
+}

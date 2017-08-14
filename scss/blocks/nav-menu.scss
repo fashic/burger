@@ -1,0 +1,44 @@
+.nav-menu {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.nav-menu__nav {
+  display: flex;
+}
+
+.nav-menu__list {
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+}
+
+.nav-menu__item {
+  display: flex;
+  align-items: center;
+
+  &:last-child {
+      &:after {
+        display: none;
+      }
+    }
+  
+  &::after{
+    content: "";
+    display: block;
+    background: #fff;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    margin: 0 15px;
+  }
+ 
+}
+
+.nav-menu__link {
+  color: #fff;
+  font-size: 13px;
+  text-transform: uppercase;
+  text-decoration: none;
+}

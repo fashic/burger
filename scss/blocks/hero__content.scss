@@ -1,0 +1,25 @@
+.hero__container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero__wrap {
+  display: flex;
+  align-items: center; 
+}
+
+.hero__img-pic {
+  max-width: 100%;
+}
+
+.hero__text {
+  margin-left: 10px;
+}
+
+.hero__desc {
+  font-size: 65px;
+  @include lifehack();
+  color: #fff;
+}

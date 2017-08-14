@@ -1,0 +1,72 @@
+.team-acco {
+  margin-top: 75px;
+}
+
+.team-acco__item {
+  margin-bottom: 20px;
+  
+  &.active {
+    .team-acco__content {
+      height: auto;
+    }
+
+    .team-acco__title {
+      color: $yellow;
+
+      &:before {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
+
+.team-acco__title {
+  color: #fff;
+  @include gagalin();
+  font-size: 14px;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+
+  &::before {
+    content: "";
+    width: 0;
+    height: 0;
+    border: 9px solid transparent;
+    border-top-color: $yellow;
+    border-bottom: none;
+    margin-right: 10px;
+  }
+}
+
+.team-acco__content {
+  display: flex;
+  overflow: hidden;
+  height: 0;
+}
+
+.team-acco__avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+}
+.team-acco__pic {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%;
+}
+
+.team-acco__desc-occ {
+  color: #fff;
+  @include ubuntu(bold);
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.team-acco__desc-text {
+  color: #fff;
+}

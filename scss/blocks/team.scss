@@ -1,0 +1,21 @@
+.team {
+  background: url("../../images/bg/team.jpg") center center no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.team__wrap {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 48%;
+  background: rgba($black, .93);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.team__content {
+  width: 70%;
+}
