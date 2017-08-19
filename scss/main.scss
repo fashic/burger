@@ -13,13 +13,13 @@ $red: #e35028;
 @import "./_misc/layout.scss";
 
 //blocks
+@import "./blocks/section__title.scss";
 @import "./blocks/hero.scss";
+@import "./blocks/header.scss";
 @import "./blocks/nav-menu.scss";
 @import "./blocks/button.scss";
-@import "./blocks/header.scss";
 @import "./blocks/hero__content.scss";
 @import "./blocks/best.scss";
-@import "./blocks/section__title.scss";
 @import "./blocks/best__title.scss";
 @import "./blocks/team.scss";
 @import "./blocks/team-acco.scss";
