@@ -1,0 +1,248 @@
+.form__delivery {
+  display: flex;
+  justify-content: space-between;
+  padding: rem(54px) 0 rem(117px);
+
+  @include tablets() {
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 167px;
+    padding-top: 58px;
+  }
+}
+
+.form__block {
+  width: 49%;
+
+  @include tablets() {
+   width: 65%; 
+  }
+
+  @include phones() {
+    width: 100%;
+  }
+}
+
+.form__block-row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  @include phones() {
+    margin-top: rem(6px);
+  }
+}
+
+.form__name, {
+  width: 48%;
+}
+
+.form__tel {
+  width: 48%;
+}
+
+.form__house    {
+  width: 23%;
+}
+
+.form__street {
+  width: 100%;
+  padding-top: rem(4px);
+
+  @include tablets() {
+   margin-top: rem(7px); 
+  }
+}
+
+.form__adress {
+  width: 22%;
+  padding-top: rem(4px);
+
+  @include phones() {
+    width: 32%;
+    &:last-child {
+      display: none;
+    }  
+  }
+}
+
+.form__elem-title {
+  font-size: rem(14px);
+  padding-top: rem(10px);
+  display: inline-block;
+  padding-bottom: rem(5px);
+
+  @include phones() {
+    font-size: 1rem;
+  }
+}
+
+.form__input-text {
+  width: 100%;
+  border-radius: rem(4px);
+  padding-bottom: rem(8px);
+  padding-top: rem(10px);
+  padding-left: rem(7px);
+  border: none;
+}
+
+.form__textarea-label {
+  width: 100%;
+
+  @include tablets() {
+   margin-top: rem(16px); 
+  }
+}
+
+.form__textarea {
+  @extend .form__input-text;
+  height: rem(110px);
+  resize: none;
+  border: none;
+
+  @include phones() {
+    height: 8.4rem;
+  }
+}
+
+.form__block-row-fs {
+  @extend .form__block-row;
+  justify-content: flex-start;
+  margin-top: rem(18px);
+
+  @include phones() {
+    justify-content: center;
+  }
+}
+
+.form__block-row-fs_first {
+  margin-top: rem(10px);
+
+  @include phones() {
+    margin-top: 2.2rem;
+  }
+}
+
+.form__radio {
+  margin-right: rem(21px);
+
+  @include phones() {
+   margin-right: 2.4rem; 
+  }
+}
+
+.form__radio-last {
+  margin-right: 0;
+}
+
+.form__button-text {
+  @extend .form__elem-title;
+  padding-left: rem(10px);
+}
+
+
+.form__radio-button {
+  display: none;
+  &:checked + .form__button-text:after {
+    display: block;
+  }
+}
+
+.form__button-text {
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  padding: 0 0 0 rem(25px); 
+  display: inline;
+  &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: rem(1px);
+      display: block;
+      width: rem(15px);
+      height: rem(15px);
+      background-color: #fff;
+      border-radius: 50%;
+  }
+  &:after {
+      content: "";
+      position: absolute;
+      top: rem(4px);
+      left: rem(4px);
+      display: none;
+      width: rem(7px);
+      height: rem(7px);
+      background-color: #e35028;
+      border-radius: 50%;
+  }
+}
+
+.form__checkbox {
+  @include phones() {
+   padding-top: 1.2rem; 
+  }
+}
+
+.form__checkbox-button {
+  display: none;
+
+  &:checked+.form__checkbox-text:after {
+    display: block;
+  }
+}
+
+.form__checkbox-text {
+  font-size: rem(14px);
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  padding-left: rem(26px);
+
+  @include phones() {
+   font-size: 1rem; 
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    left: rem(1px);
+    bottom: rem(2px);
+    display: block;
+    height: rem(15px);
+    width: rem(15px);
+    background-color: #fff;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    display: none;
+    top: rem(5px);
+    left: rem(2px);
+    width: rem(12px);
+    height: rem(9px);
+    background: url(../images/icon/mark.png) center center no-repeat
+  }
+}
+
+.form__block-button {
+  @include tablets() {
+    margin-top: 42px;
+  }
+}
+
+.form__reset {
+  border-style: none;
+  background-color: transparent;
+  color: #fff;
+  @include ubuntu($style: light);
+  font-size: rem(14px);
+  margin-left: rem(14px);
+
+  @include phones() {
+   font-size: 1rem;
+   margin-left: 1.3rem; 
+  }
+}
+

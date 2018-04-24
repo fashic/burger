@@ -1,0 +1,31 @@
+.delivery {
+  background: url("../images/bg/delivery.jpg") center center no-repeat;
+  background-size: cover;
+  color: #fff;
+}
+
+.delivery__wrap {
+  @include tablets() {
+    padding-top: rem(15px);
+  }
+
+  @include phones() {
+    padding-top: 4.3rem;
+  }
+}
+
+.delivery-title {
+  margin-top: rem(17px);
+
+  @include tablets() {
+    margin-top: 0;
+  }
+
+  @include phones() {
+    text-align: center;
+    font-size: 3.9rem;
+    padding-left: 30px;
+    padding-right: 30px;
+    line-height: 4.5rem;  
+  }
+}

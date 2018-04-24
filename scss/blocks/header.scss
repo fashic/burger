@@ -1,5 +1,24 @@
 .header {
   display: flex;
   align-items: center;
+  width: 100%;
+
+  @include tablets() {
+    position: absolute;
+    top: rem(-7px);
+  }
+
+  @include phones() {
+    padding-top: rem(8px);
+  }
+}
+
+.header__img {
+  flex: 1;
+  padding-top: rem(10px);
+
+  @include phones() {
+    padding-left: rem(4px);
+  }
 }
 

@@ -1,0 +1,50 @@
+.hamburger-menu-link {
+    vertical-align: middle;
+    position: relative;
+    height: rem(22px);
+    align-items: center;
+    margin-left: rem(30px);
+    display: none;
+
+    @include tablets() {
+    display: flex;
+    margin-top: 6px
+    }
+}
+
+.hamburger-menu-link__bars {
+
+    
+    &, &:before, &:after {
+        background: #fff;
+        width: rem(28px);
+        height: rem(5px);
+        border-radius: rem(3px);
+    }
+
+    &:before, &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    }
+
+    &:before {
+        top: 0;
+        @include phones() {
+            top: rem(-1px)
+        }
+	}
+
+	&:after {
+        bottom: 0;
+        @include phones() {
+            bottom: rem(-5px)
+        }
+    }
+
+    @include phones() {
+        margin-top: rem(5px);
+    }
+    
+}
+

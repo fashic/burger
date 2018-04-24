@@ -1,0 +1,5 @@
+/node_modules/*
+webpack.config.js
+prepros-6.config
+package.json
+package-lock.json

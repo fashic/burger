@@ -1,0 +1,106 @@
+.tooltip {
+    top: rem(-13px);
+    left: rem(-3px);
+    position: absolute;
+    display: flex;
+    padding-top: rem(9px);
+
+    @include tablets() {
+        top: 108px;
+        left: 128px;
+    }
+
+    @include phones() {
+        top: rem(-11px);
+        left: 0.65rem;
+    }
+}
+
+.tooltip__but {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: rem(98px);
+    height: rem(98px);
+    background-color: rgb(240, 140, 51);
+    border-radius: rem(5px);
+    &:hover {
+        background-color: #e35028;
+    }
+    &:hover + .tooltip__content{
+        left: rem(90px);
+        top: rem(8px);
+        width: 6.9rem;
+        height: 6.9rem;
+    }
+
+    @include phones() {
+        width: 6.9rem;
+        height: 6.9rem;
+        text-align: center;
+    }
+}
+
+.tooltip__but-svg {
+    width: rem(46px);
+    height: rem(44px);
+    fill: white;
+
+    @include phones() {
+        width: 3.75rem;
+        height: 3.75rem;
+    }
+}
+
+.tooltip__but-text {
+    @include gagalin;
+    color: white;
+    padding-top: rem(5px);
+    font-size: rem(13px);
+
+    @include phones() {
+        width: 6.9rem;
+        font-size: 1rem;    }
+}
+
+.tooltip__content
+{
+    z-index: 10;
+    background: #fef8ec;
+    position: absolute;
+    top: rem(3px);
+    left: rem(9999px);
+    padding-left: rem(20px);
+    padding-right: rem(20px);
+    padding-top: rem(13px);
+    padding-bottom: rem(7px);
+    border-radius: rem(5px);
+
+    @include phones() {
+        top: rem(7px);
+    }
+}
+
+.tooltip__img {
+    padding-right: rem(25px);
+}
+
+.tooltip__img-svg {
+    width: rem(45px);
+    height: rem(45px);
+}
+
+.tooltip__name {
+    padding-right: rem(56px);
+    font-size: rem(14px);
+    font-weight: 500;
+}
+
+.tooltip__value {
+    font-size: rem(14px);
+    font-weight: 500;
+    text-align: right;
+    white-space: nowrap;
+}

@@ -1,0 +1,22 @@
+.hamburger-menu-link {
+  vertical-align: middle;
+  position: relative;
+  height: rem(22px);
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-left: rem(30px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.hamburger-menu-link__bars, .hamburger-menu-link__bars:before, .hamburger-menu-link__bars:after {
+  background: #fff;
+  width: rem(24px);
+  height: rem(5px);
+  border-radius: rem(3px); }
+
+.hamburger-menu-link__bars:before, .hamburger-menu-link__bars:after {
+  content: "";
+  display: block;
+  position: absolute; }
