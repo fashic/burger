@@ -6,15 +6,44 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- <link rel="stylesheet" href="./css/normalize.css"> -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css">
+  <link rel="stylesheet" href="./css/plugins/jquery.fancybox.css">
   <link rel="stylesheet" href="./css/main.css">
+  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
   <title>BurgerBOOM</title>
 </head>
 
 <body>
   <div class="wrapper">
+      <div class="popap" id="hidden-content">
+          <div class="popap__logo">
+            <img src="./images/icons/logo.svg" alt="">            
+          </div>
+          <ul class="popap__list">
+            <li class="popap__item">
+              <a href="" class="popap__link">О нас</a>
+            </li>
+            <li class="popap__item">
+              <a href="" class="popap__link">Бургеры</a>
+            </li>
+            <li class="popap__item">
+              <a href="" class="popap__link">Команда</a>
+            </li>
+            <li class="popap__item">
+              <a href="" class="popap__link">Меню</a>
+            </li>
+            <li class="popap__item">
+              <a href="" class="popap__link">Отзывы</a>
+            </li>
+            <li class="popap__item">
+              <a href="" class="popap__link">Контакты</a>
+            </li>
+          </ul>
+      </div>
     <div class="maincontent">
 
-      <section class="section hero">
+    <section class="section hero">
         <div class="container hero__wrapper">
           <header class="header">
             <div class="header__img">
@@ -43,29 +72,31 @@
                   </li>
                 </ul>
                 <button class="button">Заказать</button>
-                <a class="hamburger-menu-link" href="">
+                <a class="hamburger-menu-link" data-fancybox data-src="#hidden-content" href="javascript:;">
                   <div class="hamburger-menu-link__bars"></div>
                 </a>
               </nav>
             </div>
           </header>
           <div class="hero__container">
-            <div class="hero__img">
+            <!-- <div> -->
+              <div class="hero__img">
               <img src="./images/content/burger.png" alt="" class="hero__img-pic">
-            </div>
-            <div class="hero__text">
+              </div>
+              <div class="hero__text">
               <div class="section-title">
                 Мы делаем
               </div>
               <div class="hero__desc">
                 натуральные бургеры
               </div>
-            </div>
+              </div>
+            <!-- </div> -->
           </div>
         </div>
-      </section>
+    </section>
 
-      <section class="section best">
+    <section class="section best">
         <div class="container best__wrap">
           <h2 class="section-title section-title__best">Мы лучшие</h2>
           <ul class="best__list">
@@ -92,7 +123,7 @@
                 <div class="best__item-title">Ручная сборка</div>
                 <div class="best__item-text">
                   <p>Драма представляет собой деструктивный цикл. Анапест представляет собой анапест. Первое полустишие притягивает
-                  сюжетный реформаторский пафос.</p>
+                    сюжетный реформаторский пафос.</p>
                 </div>
               </div>
             </li>
@@ -107,758 +138,1126 @@
                 <div class="best__item-text">
                   <p>Драма представляет собой деструктивный цикл. Анапест представляет собой анапест.</p>
                 </div>
-              </div>  
+              </div>
             </li>
           </ul>
         </div>
-      </section>
+    </section>
 
-      <section class="section burger">
-        <div class="container slider-box">
-          <div class="slider-box__nav">
-            <a href="" class="slider-box__but slider-box__but--prev"></a>
-            <a href="" class="slider-box__but slider-box__but--next"></a>
+    <section class="section burger">
+      <div class="slider slider-box__list">
+          <div>
+            <div class="slider-box__item">
+              <div class="tooltip">
+                <div class="tooltip__but">
+                  <svg class="tooltip__but-svg">
+                    <use xlink:href="images/sprite/sprite.svg#burger"></use>
+                  </svg>
+                  <spam class="tooltip__but-text">Состав</spam>
+                </div>
+                <div class="tooltip__content">
+                  <table class="tooltip__ingredients">
+                    <tbody>
+                      <tr class="tooltip__row">
+                        <td class="tooltip__img">
+                          <svg class="tooltip__img-svg" style="fill: #e25028;">
+                            <use xlink:href="images/sprite/sprite.svg#beef"></use>
+                          </svg>
+                        </td>
+                        <td class="tooltip__name">
+                          <p>Говядина</p>
+                        </td>
+                        <td class="tooltip__value">
+                          <p>300 г</p>
+                        </td>
+                      </tr>
+                      <tr class="tooltip__row">
+                        <td class="tooltip__img">
+                          <svg class="tooltip__img-svg" style="fill: #f8b43a;">
+                            <use xlink:href="images/sprite/sprite.svg#buns"></use>
+                          </svg>
+                        </td>
+                        <td class="tooltip__name">
+                          <p>Булочки</p>
+                        </td>
+                        <td class="tooltip__value">
+                          <p>100 г</p>
+                        </td>
+                      </tr>
+                      <tr class="tooltip__row">
+                        <td class="tooltip__img">
+                          <svg class="tooltip__img-svg" style="fill: #8ac03e;">
+                            <use xlink:href="images/sprite/sprite.svg#salad"></use>
+                          </svg>
+                        </td>
+                        <td class="tooltip__name">
+                          <p>Зелень</p>
+                        </td>
+                        <td class="tooltip__value">
+                          <p>70 г</p>
+                        </td>
+                      </tr>
+                      <tr class="tooltip__row">
+                        <td class="tooltip__img">
+                          <svg class="tooltip__img-svg" style="fill: #e25028;">
+                            <use xlink:href="images/sprite/sprite.svg#sauce"></use>
+                          </svg>
+                        </td>
+                        <td class="tooltip__name">
+                          <p>Соус</p>
+                        </td>
+                        <td class="tooltip__value">
+                          <p>150 г</p>
+                        </td>
+                      </tr>
+                      <tr class="tooltip__row">
+                        <td class="tooltip__img">
+                          <svg class="tooltip__img-svg" style="fill: #8ac03e;">
+                            <use xlink:href="images/sprite/sprite.svg#cucumber"></use>
+                          </svg>
+                        </td>
+                        <td class="tooltip__name">
+                          <p>Овощи</p>
+                        </td>
+                        <td class="tooltip__value">
+                          <p>200 г</p>
+                        </td>
+                      </tr>
+                      <tr class="tooltip__row">
+                        <td class="tooltip__img">
+                          <svg class="tooltip__img-svg" style="fill: #f8b43a;">
+                            <use xlink:href="images/sprite/sprite.svg#cheese"></use>
+                          </svg>
+                        </td>
+                        <td class="tooltip__name">
+                          <p>Сыр</p>
+                        </td>
+                        <td class="tooltip__value">
+                          <p>80 г</p>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="slider-box__content">
+                <div class="slider-box__left">
+                  <img src="images/content/slide-1.png" alt="" class="slider-box__left-img">
+                </div>
+                <div class="slider-box__right">
+                  <span class="slider-box__capt">Dark Beef Burger</span>
+                  <p class="slider-box__text">Ваш старый добрый знакомый, с рубленым бифштексом из 100% говядины, тремя кусочками нежнейшего сыра эмменталь,
+                    двумя помидорами, луком, салатом и соусом гриль теперь с добавлением экзотического соуса чураско.</p>
+                  <div class="slider_order__wrap">
+                    <div class="slider-order">
+                      <span class="slider-order__price">500</span>
+                      рублей
+                    </div>
+                    <a href="" class="button button__slider-box">заказать</a>
+                  </div>
+                </div>
+              </div>
+              <div class="slider-box__kkal">
+                <svg class="slider-box__kkal-svg">
+                  <use xlink:href="/images/sprite/sprite.svg#kkal"></use>
+                </svg>
+                <span class="slider-box__kkal-value">1200</span>
+                <span class="slider-box__kkal-text">ккал</span>
+              </div>
+            </div>
           </div>
-          <div class="slider-box__wrap">
-            <ul class="slider-box__list">
-              <li class="slider-box__item">
-                <div class="tooltip">
-                  <div class="tooltip__but">
-                    <svg class="tooltip__but-svg">
-                      <use xlink:href="images/sprite/sprite.svg#burger"></use>
-                    </svg>
-                    <spam class="tooltip__but-text">Состав</spam>
-                  </div>
-                  <div class="tooltip__content">
-                    <table class="tooltip__ingredients">
-                      <tbody>
-                        <tr class="tooltip__row">
-                          <td class="tooltip__img">
-                            <svg class="tooltip__img-svg" style="fill: #e25028;">
-                              <use xlink:href="images/sprite/sprite.svg#beef"></use>
-                            </svg>
-                          </td>
-                          <td class="tooltip__name">
-                            <p>Говядина</p>
-                          </td>
-                          <td class="tooltip__value">
-                            <p>300 г</p>
-                          </td>
-                        </tr>
-                        <tr class="tooltip__row">
-                          <td class="tooltip__img">
-                            <svg class="tooltip__img-svg" style="fill: #f8b43a;">
-                              <use xlink:href="images/sprite/sprite.svg#buns"></use>
-                            </svg>
-                          </td>
-                          <td class="tooltip__name">
-                            <p>Булочки</p>
-                          </td>
-                          <td class="tooltip__value">
-                            <p>100 г</p>
-                          </td>
-                        </tr>
-                        <tr class="tooltip__row">
-                          <td class="tooltip__img">
-                            <svg class="tooltip__img-svg" style="fill: #8ac03e;">
-                              <use xlink:href="images/sprite/sprite.svg#salad"></use>
-                            </svg>
-                          </td>
-                          <td class="tooltip__name">
-                            <p>Зелень</p>
-                          </td>
-                          <td class="tooltip__value">
-                            <p>70 г</p>
-                          </td>
-                        </tr>
-                        <tr class="tooltip__row">
-                          <td class="tooltip__img">
-                            <svg class="tooltip__img-svg" style="fill: #e25028;">
-                              <use xlink:href="images/sprite/sprite.svg#sauce"></use>
-                            </svg>
-                          </td>
-                          <td class="tooltip__name">
-                            <p>Соус</p>
-                          </td>
-                          <td class="tooltip__value">
-                            <p>150 г</p>
-                          </td>
-                        </tr>
-                        <tr class="tooltip__row">
-                          <td class="tooltip__img">
-                            <svg class="tooltip__img-svg" style="fill: #8ac03e;">
-                              <use xlink:href="images/sprite/sprite.svg#cucumber"></use>
-                            </svg>
-                          </td>
-                          <td class="tooltip__name">
-                            <p>Овощи</p>
-                          </td>
-                          <td class="tooltip__value">
-                            <p>200 г</p>
-                          </td>
-                        </tr>
-                        <tr class="tooltip__row">
-                          <td class="tooltip__img">
-                            <svg class="tooltip__img-svg" style="fill: #f8b43a;">
-                              <use xlink:href="images/sprite/sprite.svg#cheese"></use>
-                            </svg>
-                          </td>
-                          <td class="tooltip__name">
-                            <p>Сыр</p>
-                          </td>
-                          <td class="tooltip__value">
-                            <p>80 г</p>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
+          <div>
+            <div class="slider-box__item">
+              <div class="tooltip">
+                <div class="tooltip__but">
+                  <svg class="tooltip__but-svg">
+                    <use xlink:href="images/sprite/sprite.svg#burger"></use>
+                  </svg>
+                  <spam class="tooltip__but-text">Состав</spam>
                 </div>
-                <div class="slider-box__content">
-                  <div class="slider-box__left">
-                    <img src="../images/content/slide-1.png" alt="" class="slider-box__left-img">
-                  </div>
-                  <div class="slider-box__right">
-                    <span class="slider-box__capt">Dark Beef Burger</span>
-                    <p class="slider-box__text">Ваш старый добрый знакомый, с рубленым бифштексом из 100% говядины, тремя кусочками нежнейшего сыра эмменталь,
-                      двумя помидорами, луком, салатом и соусом гриль теперь с добавлением экзотического соуса чураско.</p>
-                    <div class="slider_order__wrap">
-                      <div class="slider-order">
-                        <span class="slider-order__price">500</span>
-                        рублей
+                <div class="tooltip__content">
+                  <table class="tooltip__ingredients">
+                    <tbody>
+                      <tr class="tooltip__row">
+                        <td class="tooltip__img">
+                          <svg class="tooltip__img-svg" style="fill: #e25028;">
+                            <use xlink:href="images/sprite/sprite.svg#beef"></use>
+                          </svg>
+                        </td>
+                        <td class="tooltip__name">
+                          <p>Говядина</p>
+                        </td>
+                        <td class="tooltip__value">
+                          <p>300 г</p>
+                        </td>
+                      </tr>
+                      <tr class="tooltip__row">
+                        <td class="tooltip__img">
+                          <svg class="tooltip__img-svg" style="fill: #f8b43a;">
+                            <use xlink:href="images/sprite/sprite.svg#buns"></use>
+                          </svg>
+                        </td>
+                        <td class="tooltip__name">
+                          <p>Булочки</p>
+                        </td>
+                        <td class="tooltip__value">
+                          <p>100 г</p>
+                        </td>
+                      </tr>
+                      <tr class="tooltip__row">
+                        <td class="tooltip__img">
+                          <svg class="tooltip__img-svg" style="fill: #8ac03e;">
+                            <use xlink:href="images/sprite/sprite.svg#salad"></use>
+                          </svg>
+                        </td>
+                        <td class="tooltip__name">
+                          <p>Зелень</p>
+                        </td>
+                        <td class="tooltip__value">
+                          <p>70 г</p>
+                        </td>
+                      </tr>
+                      <tr class="tooltip__row">
+                        <td class="tooltip__img">
+                          <svg class="tooltip__img-svg" style="fill: #e25028;">
+                            <use xlink:href="images/sprite/sprite.svg#sauce"></use>
+                          </svg>
+                        </td>
+                        <td class="tooltip__name">
+                          <p>Соус</p>
+                        </td>
+                        <td class="tooltip__value">
+                          <p>150 г</p>
+                        </td>
+                      </tr>
+                      <tr class="tooltip__row">
+                        <td class="tooltip__img">
+                          <svg class="tooltip__img-svg" style="fill: #8ac03e;">
+                            <use xlink:href="images/sprite/sprite.svg#cucumber"></use>
+                          </svg>
+                        </td>
+                        <td class="tooltip__name">
+                          <p>Овощи</p>
+                        </td>
+                        <td class="tooltip__value">
+                          <p>200 г</p>
+                        </td>
+                      </tr>
+                      <tr class="tooltip__row">
+                        <td class="tooltip__img">
+                          <svg class="tooltip__img-svg" style="fill: #f8b43a;">
+                            <use xlink:href="images/sprite/sprite.svg#cheese"></use>
+                          </svg>
+                        </td>
+                        <td class="tooltip__name">
+                          <p>Сыр</p>
+                        </td>
+                        <td class="tooltip__value">
+                          <p>80 г</p>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="slider-box__content">
+                <div class="slider-box__left">
+                  <img src="images/content/slide-1.png" alt="" class="slider-box__left-img">
+                </div>
+                <div class="slider-box__right">
+                  <span class="slider-box__capt">Dark Beef Burger</span>
+                  <p class="slider-box__text">Ваш старый добрый знакомый, с рубленым бифштексом из 100% говядины, тремя кусочками нежнейшего сыра эмменталь,
+                    двумя помидорами, луком, салатом и соусом гриль теперь с добавлением экзотического соуса чураско.</p>
+                  <div class="slider_order__wrap">
+                    <div class="slider-order">
+                      <span class="slider-order__price">500</span>
+                      рублей
                     </div>
                     <a href="" class="button button__slider-box">заказать</a>
-                    </div>  
                   </div>
                 </div>
-                <div class="slider-box__kkal">
-                  <svg class="slider-box__kkal-svg">
-                    <use xlink:href="/images/sprite/sprite.svg#kkal"></use>
-                  </svg>
-                  <span class="slider-box__kkal-value">1200</span>
-                  <span class="slider-box__kkal-text">ккал</span>
-                </div>
-              </li>
-              <li class="slider-box__item">
-                <div class="tooltip">
-                  <div class="tooltip__but">
-                    <svg class="tooltip__but-svg">
-                      <use xlink:href="images/sprite/sprite.svg#burger"></use>
-                    </svg>
-                    <spam class="tooltip__but-text">Состав</spam>
-                  </div>
-                  <div class="tooltip__content">
-                    <table class="tooltip__ingredients">
-                      <tbody>
-                        <tr class="tooltip__row">
-                          <td class="tooltip__img">
-                            <svg class="tooltip__img-svg" style="fill: #e25028;">
-                              <use xlink:href="images/sprite/sprite.svg#beef"></use>
-                            </svg>
-                          </td>
-                          <td class="tooltip__name">
-                            <p>Говядина</p>
-                          </td>
-                          <td class="tooltip__value">
-                            <p>300 г</p>
-                          </td>
-                        </tr>
-                        <tr class="tooltip__row">
-                          <td class="tooltip__img">
-                            <svg class="tooltip__img-svg" style="fill: #f8b43a;">
-                              <use xlink:href="images/sprite/sprite.svg#buns"></use>
-                            </svg>
-                          </td>
-                          <td class="tooltip__name">
-                            <p>Булочки</p>
-                          </td>
-                          <td class="tooltip__value">
-                            <p>100 г</p>
-                          </td>
-                        </tr>
-                        <tr class="tooltip__row">
-                          <td class="tooltip__img">
-                            <svg class="tooltip__img-svg" style="fill: #8ac03e;">
-                              <use xlink:href="images/sprite/sprite.svg#salad"></use>
-                            </svg>
-                          </td>
-                          <td class="tooltip__name">
-                            <p>Зелень</p>
-                          </td>
-                          <td class="tooltip__value">
-                            <p>70 г</p>
-                          </td>
-                        </tr>
-                        <tr class="tooltip__row">
-                          <td class="tooltip__img">
-                            <svg class="tooltip__img-svg" style="fill: #e25028;">
-                              <use xlink:href="images/sprite/sprite.svg#sauce"></use>
-                            </svg>
-                          </td>
-                          <td class="tooltip__name">
-                            <p>Соус</p>
-                          </td>
-                          <td class="tooltip__value">
-                            <p>150 г</p>
-                          </td>
-                        </tr>
-                        <tr class="tooltip__row">
-                          <td class="tooltip__img">
-                            <svg class="tooltip__img-svg" style="fill: #8ac03e;">
-                              <use xlink:href="images/sprite/sprite.svg#cucumber"></use>
-                            </svg>
-                          </td>
-                          <td class="tooltip__name">
-                            <p>Овощи</p>
-                          </td>
-                          <td class="tooltip__value">
-                            <p>200 г</p>
-                          </td>
-                        </tr>
-                        <tr class="tooltip__row">
-                          <td class="tooltip__img">
-                            <svg class="tooltip__img-svg" style="fill: #f8b43a;">
-                              <use xlink:href="images/sprite/sprite.svg#cheese"></use>
-                            </svg>
-                          </td>
-                          <td class="tooltip__name">
-                            <p>Сыр</p>
-                          </td>
-                          <td class="tooltip__value">
-                            <p>80 г</p>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-                <div class="slider-box__content">
-                  <div class="slider-box__left">
-                    <img src="../images/content/slide-1.png" alt="" class="slider-box__left-img">
-                  </div>
-                  <div class="slider-box__right">
-                    <span class="slider-box__capt">Dark Beef Burger</span>
-                    <p class="slider-box__text">Ваш старый добрый знакомый, с рубленым бифштексом из 100% говядины, тремя кусочками нежнейшего сыра эмменталь,
-                      двумя помидорами, луком, салатом и соусом гриль теперь с добавлением экзотического соуса чураско.</p>
-                    <div class="slider_order__wrap">
-                      <div class="slider-order">
-                        <span class="slider-order__price">500</span>
-                        рублей
-                    </div>
-                    <a href="" class="button button__slider-box">заказать</a>
-                    </div>  
-                  </div>
-                </div>
-                <div class="slider-box__kkal">
-                  <svg class="slider-box__kkal-svg">
-                    <use xlink:href="/images/sprite/sprite.svg#kkal"></use>
-                  </svg>
-                  <span class="slider-box__kkal-value">1200</span>
-                  <span class="slider-box__kkal-text">ккал</span>
-                </div>
-              </li>
-              <li class="slider-box__item">
-                <div class="tooltip">
-                  <div class="tooltip__but">
-                    <svg class="tooltip__but-svg">
-                      <use xlink:href="images/sprite/sprite.svg#burger"></use>
-                    </svg>
-                    <spam class="tooltip__but-text">Состав</spam>
-                  </div>
-                  <div class="tooltip__content">
-                    <table class="tooltip__ingredients">
-                      <tbody>
-                        <tr class="tooltip__row">
-                          <td class="tooltip__img">
-                            <svg class="tooltip__img-svg" style="fill: #e25028;">
-                              <use xlink:href="images/sprite/sprite.svg#beef"></use>
-                            </svg>
-                          </td>
-                          <td class="tooltip__name">
-                            <p>Говядина</p>
-                          </td>
-                          <td class="tooltip__value">
-                            <p>300 г</p>
-                          </td>
-                        </tr>
-                        <tr class="tooltip__row">
-                          <td class="tooltip__img">
-                            <svg class="tooltip__img-svg" style="fill: #f8b43a;">
-                              <use xlink:href="images/sprite/sprite.svg#buns"></use>
-                            </svg>
-                          </td>
-                          <td class="tooltip__name">
-                            <p>Булочки</p>
-                          </td>
-                          <td class="tooltip__value">
-                            <p>100 г</p>
-                          </td>
-                        </tr>
-                        <tr class="tooltip__row">
-                          <td class="tooltip__img">
-                            <svg class="tooltip__img-svg" style="fill: #8ac03e;">
-                              <use xlink:href="images/sprite/sprite.svg#salad"></use>
-                            </svg>
-                          </td>
-                          <td class="tooltip__name">
-                            <p>Зелень</p>
-                          </td>
-                          <td class="tooltip__value">
-                            <p>70 г</p>
-                          </td>
-                        </tr>
-                        <tr class="tooltip__row">
-                          <td class="tooltip__img">
-                            <svg class="tooltip__img-svg" style="fill: #e25028;">
-                              <use xlink:href="images/sprite/sprite.svg#sauce"></use>
-                            </svg>
-                          </td>
-                          <td class="tooltip__name">
-                            <p>Соус</p>
-                          </td>
-                          <td class="tooltip__value">
-                            <p>150 г</p>
-                          </td>
-                        </tr>
-                        <tr class="tooltip__row">
-                          <td class="tooltip__img">
-                            <svg class="tooltip__img-svg" style="fill: #8ac03e;">
-                              <use xlink:href="images/sprite/sprite.svg#cucumber"></use>
-                            </svg>
-                          </td>
-                          <td class="tooltip__name">
-                            <p>Овощи</p>
-                          </td>
-                          <td class="tooltip__value">
-                            <p>200 г</p>
-                          </td>
-                        </tr>
-                        <tr class="tooltip__row">
-                          <td class="tooltip__img">
-                            <svg class="tooltip__img-svg" style="fill: #f8b43a;">
-                              <use xlink:href="images/sprite/sprite.svg#cheese"></use>
-                            </svg>
-                          </td>
-                          <td class="tooltip__name">
-                            <p>Сыр</p>
-                          </td>
-                          <td class="tooltip__value">
-                            <p>80 г</p>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-                <div class="slider-box__content">
-                  <div class="slider-box__left">
-                    <img src="../images/content/slide-1.png" alt="" class="slider-box__left-img">
-                  </div>
-                  <div class="slider-box__right">
-                    <span class="slider-box__capt">Dark Beef Burger</span>
-                    <p class="slider-box__text">Ваш старый добрый знакомый, с рубленым бифштексом из 100% говядины, тремя кусочками нежнейшего сыра эмменталь,
-                      двумя помидорами, луком, салатом и соусом гриль теперь с добавлением экзотического соуса чураско.</p>
-                    <div class="slider_order__wrap">
-                      <div class="slider-order">
-                        <span class="slider-order__price">500</span>
-                        рублей
-                    </div>
-                    <a href="" class="button button__slider-box">заказать</a>
-                    </div>  
-                  </div>
-                </div>
-                <div class="slider-box__kkal">
-                  <svg class="slider-box__kkal-svg">
-                    <use xlink:href="/images/sprite/sprite.svg#kkal"></use>
-                  </svg>
-                  <span class="slider-box__kkal-value">1200</span>
-                  <span class="slider-box__kkal-text">ккал</span>
-                </div>
-              </li>
-            </ul>
+              </div>
+              <div class="slider-box__kkal">
+                <svg class="slider-box__kkal-svg">
+                  <use xlink:href="/images/sprite/sprite.svg#kkal"></use>
+                </svg>
+                <span class="slider-box__kkal-value">1200</span>
+                <span class="slider-box__kkal-text">ккал</span>
+              </div>
+            </div>
           </div>
+          <div>
+            <div class="slider-box__item">
+              <div class="tooltip">
+                <div class="tooltip__but">
+                  <svg class="tooltip__but-svg">
+                    <use xlink:href="images/sprite/sprite.svg#burger"></use>
+                  </svg>
+                  <spam class="tooltip__but-text">Состав</spam>
+                </div>
+                <div class="tooltip__content">
+                  <table class="tooltip__ingredients">
+                    <tbody>
+                      <tr class="tooltip__row">
+                        <td class="tooltip__img">
+                          <svg class="tooltip__img-svg" style="fill: #e25028;">
+                            <use xlink:href="images/sprite/sprite.svg#beef"></use>
+                          </svg>
+                        </td>
+                        <td class="tooltip__name">
+                          <p>Говядина</p>
+                        </td>
+                        <td class="tooltip__value">
+                          <p>300 г</p>
+                        </td>
+                      </tr>
+                      <tr class="tooltip__row">
+                        <td class="tooltip__img">
+                          <svg class="tooltip__img-svg" style="fill: #f8b43a;">
+                            <use xlink:href="images/sprite/sprite.svg#buns"></use>
+                          </svg>
+                        </td>
+                        <td class="tooltip__name">
+                          <p>Булочки</p>
+                        </td>
+                        <td class="tooltip__value">
+                          <p>100 г</p>
+                        </td>
+                      </tr>
+                      <tr class="tooltip__row">
+                        <td class="tooltip__img">
+                          <svg class="tooltip__img-svg" style="fill: #8ac03e;">
+                            <use xlink:href="images/sprite/sprite.svg#salad"></use>
+                          </svg>
+                        </td>
+                        <td class="tooltip__name">
+                          <p>Зелень</p>
+                        </td>
+                        <td class="tooltip__value">
+                          <p>70 г</p>
+                        </td>
+                      </tr>
+                      <tr class="tooltip__row">
+                        <td class="tooltip__img">
+                          <svg class="tooltip__img-svg" style="fill: #e25028;">
+                            <use xlink:href="images/sprite/sprite.svg#sauce"></use>
+                          </svg>
+                        </td>
+                        <td class="tooltip__name">
+                          <p>Соус</p>
+                        </td>
+                        <td class="tooltip__value">
+                          <p>150 г</p>
+                        </td>
+                      </tr>
+                      <tr class="tooltip__row">
+                        <td class="tooltip__img">
+                          <svg class="tooltip__img-svg" style="fill: #8ac03e;">
+                            <use xlink:href="images/sprite/sprite.svg#cucumber"></use>
+                          </svg>
+                        </td>
+                        <td class="tooltip__name">
+                          <p>Овощи</p>
+                        </td>
+                        <td class="tooltip__value">
+                          <p>200 г</p>
+                        </td>
+                      </tr>
+                      <tr class="tooltip__row">
+                        <td class="tooltip__img">
+                          <svg class="tooltip__img-svg" style="fill: #f8b43a;">
+                            <use xlink:href="images/sprite/sprite.svg#cheese"></use>
+                          </svg>
+                        </td>
+                        <td class="tooltip__name">
+                          <p>Сыр</p>
+                        </td>
+                        <td class="tooltip__value">
+                          <p>80 г</p>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="slider-box__content">
+                <div class="slider-box__left">
+                  <img src="images/content/slide-1.png" alt="" class="slider-box__left-img">
+                </div>
+                <div class="slider-box__right">
+                  <span class="slider-box__capt">Dark Beef Burger</span>
+                  <p class="slider-box__text">Ваш старый добрый знакомый, с рубленым бифштексом из 100% говядины, тремя кусочками нежнейшего сыра эмменталь,
+                    двумя помидорами, луком, салатом и соусом гриль теперь с добавлением экзотического соуса чураско.</p>
+                  <div class="slider_order__wrap">
+                    <div class="slider-order">
+                      <span class="slider-order__price">500</span>
+                      рублей
+                    </div>
+                    <a href="" class="button button__slider-box">заказать</a>
+                  </div>
+                </div>
+              </div>
+              <div class="slider-box__kkal">
+                <svg class="slider-box__kkal-svg">
+                  <use xlink:href="/images/sprite/sprite.svg#kkal"></use>
+                </svg>
+                <span class="slider-box__kkal-value">1200</span>
+                <span class="slider-box__kkal-text">ккал</span>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div class="button__slick">
+          <ul>
+            <li class="prev"></li>
+            <li class="next"></li>
+          </ul>
+
+      </div>
+      <!-- <div class="container slider-box" <div class="slider-box__nav">
+          <a href="" class="slider-box__but slider-box__but--prev"></a>
+          <a href="" class="slider-box__but slider-box__but--next"></a>
         </div>
-      </section>
+        <div class="slider-box__wrap slider">
+          <ul class="slider-box__list">
+            <li class="slider-box__item">
+              <div class="tooltip">
+                <div class="tooltip__but">
+                  <svg class="tooltip__but-svg">
+                    <use xlink:href="images/sprite/sprite.svg#burger"></use>
+                  </svg>
+                  <spam class="tooltip__but-text">Состав</spam>
+                </div>
+                <div class="tooltip__content">
+                  <table class="tooltip__ingredients">
+                    <tbody>
+                      <tr class="tooltip__row">
+                        <td class="tooltip__img">
+                          <svg class="tooltip__img-svg" style="fill: #e25028;">
+                            <use xlink:href="images/sprite/sprite.svg#beef"></use>
+                          </svg>
+                        </td>
+                        <td class="tooltip__name">
+                          <p>Говядина</p>
+                        </td>
+                        <td class="tooltip__value">
+                          <p>300 г</p>
+                        </td>
+                      </tr>
+                      <tr class="tooltip__row">
+                        <td class="tooltip__img">
+                          <svg class="tooltip__img-svg" style="fill: #f8b43a;">
+                            <use xlink:href="images/sprite/sprite.svg#buns"></use>
+                          </svg>
+                        </td>
+                        <td class="tooltip__name">
+                          <p>Булочки</p>
+                        </td>
+                        <td class="tooltip__value">
+                          <p>100 г</p>
+                        </td>
+                      </tr>
+                      <tr class="tooltip__row">
+                        <td class="tooltip__img">
+                          <svg class="tooltip__img-svg" style="fill: #8ac03e;">
+                            <use xlink:href="images/sprite/sprite.svg#salad"></use>
+                          </svg>
+                        </td>
+                        <td class="tooltip__name">
+                          <p>Зелень</p>
+                        </td>
+                        <td class="tooltip__value">
+                          <p>70 г</p>
+                        </td>
+                      </tr>
+                      <tr class="tooltip__row">
+                        <td class="tooltip__img">
+                          <svg class="tooltip__img-svg" style="fill: #e25028;">
+                            <use xlink:href="images/sprite/sprite.svg#sauce"></use>
+                          </svg>
+                        </td>
+                        <td class="tooltip__name">
+                          <p>Соус</p>
+                        </td>
+                        <td class="tooltip__value">
+                          <p>150 г</p>
+                        </td>
+                      </tr>
+                      <tr class="tooltip__row">
+                        <td class="tooltip__img">
+                          <svg class="tooltip__img-svg" style="fill: #8ac03e;">
+                            <use xlink:href="images/sprite/sprite.svg#cucumber"></use>
+                          </svg>
+                        </td>
+                        <td class="tooltip__name">
+                          <p>Овощи</p>
+                        </td>
+                        <td class="tooltip__value">
+                          <p>200 г</p>
+                        </td>
+                      </tr>
+                      <tr class="tooltip__row">
+                        <td class="tooltip__img">
+                          <svg class="tooltip__img-svg" style="fill: #f8b43a;">
+                            <use xlink:href="images/sprite/sprite.svg#cheese"></use>
+                          </svg>
+                        </td>
+                        <td class="tooltip__name">
+                          <p>Сыр</p>
+                        </td>
+                        <td class="tooltip__value">
+                          <p>80 г</p>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="slider-box__content">
+                <div class="slider-box__left">
+                  <img src="../images/content/slide-1.png" alt="" class="slider-box__left-img">
+                </div>
+                <div class="slider-box__right">
+                  <span class="slider-box__capt">Dark Beef Burger</span>
+                  <p class="slider-box__text">Ваш старый добрый знакомый, с рубленым бифштексом из 100% говядины, тремя кусочками нежнейшего сыра эмменталь,
+                    двумя помидорами, луком, салатом и соусом гриль теперь с добавлением экзотического соуса чураско.</p>
+                  <div class="slider_order__wrap">
+                    <div class="slider-order">
+                      <span class="slider-order__price">500</span>
+                      рублей
+                    </div>
+                    <a href="" class="button button__slider-box">заказать</a>
+                  </div>
+                </div>
+              </div>
+              <div class="slider-box__kkal">
+                <svg class="slider-box__kkal-svg">
+                  <use xlink:href="/images/sprite/sprite.svg#kkal"></use>
+                </svg>
+                <span class="slider-box__kkal-value">1200</span>
+                <span class="slider-box__kkal-text">ккал</span>
+              </div>
+            </li>
+            <li class="slider-box__item">
+              <div class="tooltip">
+                <div class="tooltip__but">
+                  <svg class="tooltip__but-svg">
+                    <use xlink:href="images/sprite/sprite.svg#burger"></use>
+                  </svg>
+                  <spam class="tooltip__but-text">Состав</spam>
+                </div>
+                <div class="tooltip__content">
+                  <table class="tooltip__ingredients">
+                    <tbody>
+                      <tr class="tooltip__row">
+                        <td class="tooltip__img">
+                          <svg class="tooltip__img-svg" style="fill: #e25028;">
+                            <use xlink:href="images/sprite/sprite.svg#beef"></use>
+                          </svg>
+                        </td>
+                        <td class="tooltip__name">
+                          <p>Говядина</p>
+                        </td>
+                        <td class="tooltip__value">
+                          <p>300 г</p>
+                        </td>
+                      </tr>
+                      <tr class="tooltip__row">
+                        <td class="tooltip__img">
+                          <svg class="tooltip__img-svg" style="fill: #f8b43a;">
+                            <use xlink:href="images/sprite/sprite.svg#buns"></use>
+                          </svg>
+                        </td>
+                        <td class="tooltip__name">
+                          <p>Булочки</p>
+                        </td>
+                        <td class="tooltip__value">
+                          <p>100 г</p>
+                        </td>
+                      </tr>
+                      <tr class="tooltip__row">
+                        <td class="tooltip__img">
+                          <svg class="tooltip__img-svg" style="fill: #8ac03e;">
+                            <use xlink:href="images/sprite/sprite.svg#salad"></use>
+                          </svg>
+                        </td>
+                        <td class="tooltip__name">
+                          <p>Зелень</p>
+                        </td>
+                        <td class="tooltip__value">
+                          <p>70 г</p>
+                        </td>
+                      </tr>
+                      <tr class="tooltip__row">
+                        <td class="tooltip__img">
+                          <svg class="tooltip__img-svg" style="fill: #e25028;">
+                            <use xlink:href="images/sprite/sprite.svg#sauce"></use>
+                          </svg>
+                        </td>
+                        <td class="tooltip__name">
+                          <p>Соус</p>
+                        </td>
+                        <td class="tooltip__value">
+                          <p>150 г</p>
+                        </td>
+                      </tr>
+                      <tr class="tooltip__row">
+                        <td class="tooltip__img">
+                          <svg class="tooltip__img-svg" style="fill: #8ac03e;">
+                            <use xlink:href="images/sprite/sprite.svg#cucumber"></use>
+                          </svg>
+                        </td>
+                        <td class="tooltip__name">
+                          <p>Овощи</p>
+                        </td>
+                        <td class="tooltip__value">
+                          <p>200 г</p>
+                        </td>
+                      </tr>
+                      <tr class="tooltip__row">
+                        <td class="tooltip__img">
+                          <svg class="tooltip__img-svg" style="fill: #f8b43a;">
+                            <use xlink:href="images/sprite/sprite.svg#cheese"></use>
+                          </svg>
+                        </td>
+                        <td class="tooltip__name">
+                          <p>Сыр</p>
+                        </td>
+                        <td class="tooltip__value">
+                          <p>80 г</p>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="slider-box__content">
+                <div class="slider-box__left">
+                  <img src="../images/content/slide-1.png" alt="" class="slider-box__left-img">
+                </div>
+                <div class="slider-box__right">
+                  <span class="slider-box__capt">Dark Beef Burger</span>
+                  <p class="slider-box__text">Ваш старый добрый знакомый, с рубленым бифштексом из 100% говядины, тремя кусочками нежнейшего сыра эмменталь,
+                    двумя помидорами, луком, салатом и соусом гриль теперь с добавлением экзотического соуса чураско.</p>
+                  <div class="slider_order__wrap">
+                    <div class="slider-order">
+                      <span class="slider-order__price">500</span>
+                      рублей
+                    </div>
+                    <a href="" class="button button__slider-box">заказать</a>
+                  </div>
+                </div>
+              </div>
+              <div class="slider-box__kkal">
+                <svg class="slider-box__kkal-svg">
+                  <use xlink:href="/images/sprite/sprite.svg#kkal"></use>
+                </svg>
+                <span class="slider-box__kkal-value">1200</span>
+                <span class="slider-box__kkal-text">ккал</span>
+              </div>
+            </li>
+            <li class="slider-box__item">
+              <div class="tooltip">
+                <div class="tooltip__but">
+                  <svg class="tooltip__but-svg">
+                    <use xlink:href="images/sprite/sprite.svg#burger"></use>
+                  </svg>
+                  <spam class="tooltip__but-text">Состав</spam>
+                </div>
+                <div class="tooltip__content">
+                  <table class="tooltip__ingredients">
+                    <tbody>
+                      <tr class="tooltip__row">
+                        <td class="tooltip__img">
+                          <svg class="tooltip__img-svg" style="fill: #e25028;">
+                            <use xlink:href="images/sprite/sprite.svg#beef"></use>
+                          </svg>
+                        </td>
+                        <td class="tooltip__name">
+                          <p>Говядина</p>
+                        </td>
+                        <td class="tooltip__value">
+                          <p>300 г</p>
+                        </td>
+                      </tr>
+                      <tr class="tooltip__row">
+                        <td class="tooltip__img">
+                          <svg class="tooltip__img-svg" style="fill: #f8b43a;">
+                            <use xlink:href="images/sprite/sprite.svg#buns"></use>
+                          </svg>
+                        </td>
+                        <td class="tooltip__name">
+                          <p>Булочки</p>
+                        </td>
+                        <td class="tooltip__value">
+                          <p>100 г</p>
+                        </td>
+                      </tr>
+                      <tr class="tooltip__row">
+                        <td class="tooltip__img">
+                          <svg class="tooltip__img-svg" style="fill: #8ac03e;">
+                            <use xlink:href="images/sprite/sprite.svg#salad"></use>
+                          </svg>
+                        </td>
+                        <td class="tooltip__name">
+                          <p>Зелень</p>
+                        </td>
+                        <td class="tooltip__value">
+                          <p>70 г</p>
+                        </td>
+                      </tr>
+                      <tr class="tooltip__row">
+                        <td class="tooltip__img">
+                          <svg class="tooltip__img-svg" style="fill: #e25028;">
+                            <use xlink:href="images/sprite/sprite.svg#sauce"></use>
+                          </svg>
+                        </td>
+                        <td class="tooltip__name">
+                          <p>Соус</p>
+                        </td>
+                        <td class="tooltip__value">
+                          <p>150 г</p>
+                        </td>
+                      </tr>
+                      <tr class="tooltip__row">
+                        <td class="tooltip__img">
+                          <svg class="tooltip__img-svg" style="fill: #8ac03e;">
+                            <use xlink:href="images/sprite/sprite.svg#cucumber"></use>
+                          </svg>
+                        </td>
+                        <td class="tooltip__name">
+                          <p>Овощи</p>
+                        </td>
+                        <td class="tooltip__value">
+                          <p>200 г</p>
+                        </td>
+                      </tr>
+                      <tr class="tooltip__row">
+                        <td class="tooltip__img">
+                          <svg class="tooltip__img-svg" style="fill: #f8b43a;">
+                            <use xlink:href="images/sprite/sprite.svg#cheese"></use>
+                          </svg>
+                        </td>
+                        <td class="tooltip__name">
+                          <p>Сыр</p>
+                        </td>
+                        <td class="tooltip__value">
+                          <p>80 г</p>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="slider-box__content">
+                <div class="slider-box__left">
+                  <img src="../images/content/slide-1.png" alt="" class="slider-box__left-img">
+                </div>
+                <div class="slider-box__right">
+                  <span class="slider-box__capt">Dark Beef Burger</span>
+                  <p class="slider-box__text">Ваш старый добрый знакомый, с рубленым бифштексом из 100% говядины, тремя кусочками нежнейшего сыра эмменталь,
+                    двумя помидорами, луком, салатом и соусом гриль теперь с добавлением экзотического соуса чураско.</p>
+                  <div class="slider_order__wrap">
+                    <div class="slider-order">
+                      <span class="slider-order__price">500</span>
+                      рублей
+                    </div>
+                    <a href="" class="button button__slider-box">заказать</a>
+                  </div>
+                </div>
+              </div>
+              <div class="slider-box__kkal">
+                <svg class="slider-box__kkal-svg">
+                  <use xlink:href="/images/sprite/sprite.svg#kkal"></use>
+                </svg>
+                <span class="slider-box__kkal-value">1200</span>
+                <span class="slider-box__kkal-text">ккал</span>
+              </div>
+            </li>
+          </ul>
+        </div> -->
+    </section>
 
-      <section class="section team">
-        <div class="container team__wrap">
-          <div class="team__content">
-            <h2 class="section-title team__title">
-              Команда
-            </h2>
-            <ul class="team-acco">
-              <li class="team-acco__item">
-                <a href="" class="team-acco__title">
-                  Дениел Редклиф
-                </a>
-                <div class="team-acco__content">
-                  <div class="team-acco__avatar">
-                    <!-- <img src="./images/content/acco_foto_1.jpg" alt="" class="team-acco__pic"> -->
+    <section class="section team">
+      <div class="container team__wrap">
+        <div class="team__content">
+          <h2 class="section-title team__title">
+            Команда
+          </h2>
+          <ul class="team-acco">
+            <li class="team-acco__item">
+              <a href="#" class="team-acco__title">
+                Дениел Редклиф
+              </a>
+              <div class="team-acco__content">
+                <div class="team-acco__avatar">
+                  <!-- <img src="./images/content/acco_foto_1.jpg" alt="" class="team-acco__pic"> -->
+                </div>
+                <div class="team-acco__desc">
+                  <div class="team-acco__desc-occ">
+                    Оператор
                   </div>
-                  <div class="team-acco__desc">
-                    <div class="team-acco__desc-occ">
-                      Оператор
-                    </div>
-                    <div class="team-acco__desc-text">
-                      С радостью поможет подобрать идеальный бургер и оформить заказ.
-                    </div>
+                  <div class="team-acco__desc-text">
+                    С радостью поможет подобрать идеальный бургер и оформить заказ.
                   </div>
                 </div>
-              </li>
-              <li class="team-acco__item active">
-                <a href="" class="team-acco__title">
-                  Ричард Джеймс
-                </a>
-                <div class="team-acco__content">
-                  <div class="team-acco__avatar" style="background-image: url(./images/content/acco_foto_1.jpg)"></div>
-                  <div class="team-acco__desc">
-                    <span class="team-acco__desc-occ">
-                      Оператор
-                    </span>
-                    <p class="team-acco__desc-text">
-                      С радостью поможет подобрать идеальный бургер и оформить заказ.
-                    </p>
+              </div>
+            </li>
+            <li class="team-acco__item active">
+              <a href="#" class="team-acco__title">
+                Ричард Джеймс
+              </a>
+              <div class="team-acco__content">
+                <div class="team-acco__avatar" style="background-image: url(./images/content/acco_foto_1.jpg)"></div>
+                <div class="team-acco__desc">
+                  <span class="team-acco__desc-occ">
+                    Оператор
+                  </span>
+                  <p class="team-acco__desc-text">
+                    С радостью поможет подобрать идеальный бургер и оформить заказ.
+                  </p>
+                </div>
+              </div>
+            </li>
+            <li class="team-acco__item">
+              <a href="" class="team-acco__title">
+                Джейк Финн
+              </a>
+              <div class="team-acco__content">
+                <div class="team-acco__avatar">
+                  <!-- <img src="./images/content/acco_foto_1.jpg" alt="" class="team-acco__pic"> -->
+                </div>
+                <div class="team-acco__desc">
+                  <div class="team-acco__desc-occ">
+                    Оператор
+                  </div>
+                  <div class="team-acco__desc-text">
+                    С радостью поможет подобрать идеальный бургер и оформить заказ.
                   </div>
                 </div>
-              </li>
-              <li class="team-acco__item">
-                <a href="" class="team-acco__title">
-                  Джейк Финн
-                </a>
-                <div class="team-acco__content">
-                  <div class="team-acco__avatar">
-                    <!-- <img src="./images/content/acco_foto_1.jpg" alt="" class="team-acco__pic"> -->
+              </div>
+            </li>
+            <li class="team-acco__item">
+              <a href="" class="team-acco__title">
+                Николай Иванов
+              </a>
+              <div class="team-acco__content">
+                <div class="team-acco__avatar">
+                  <!-- <img src="./images/content/acco_foto_1.jpg" alt="" class="team-acco__pic"> -->
+                </div>
+                <div class="team-acco__desc">
+                  <div class="team-acco__desc-occ">
+                    Оператор
                   </div>
-                  <div class="team-acco__desc">
-                    <div class="team-acco__desc-occ">
-                      Оператор
-                    </div>
-                    <div class="team-acco__desc-text">
-                      С радостью поможет подобрать идеальный бургер и оформить заказ.
-                    </div>
+                  <div class="team-acco__desc-text">
+                    С радостью поможет подобрать идеальный бургер и оформить заказ.
                   </div>
                 </div>
-              </li>
-              <li class="team-acco__item">
-                <a href="" class="team-acco__title">
-                  Николай Иванов
-                </a>
-                <div class="team-acco__content">
-                  <div class="team-acco__avatar">
-                    <!-- <img src="./images/content/acco_foto_1.jpg" alt="" class="team-acco__pic"> -->
-                  </div>
-                  <div class="team-acco__desc">
-                    <div class="team-acco__desc-occ">
-                      Оператор
-                    </div>
-                    <div class="team-acco__desc-text">
-                      С радостью поможет подобрать идеальный бургер и оформить заказ.
-                    </div>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
+              </div>
+            </li>
+          </ul>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="section menu">
-        <h2 class="section-title section-title_menu">Меню</h2>
-        <ul class="menu__list">
-          <li class="menu__item">
-            <a href="#menu" class="menu__block menu__block-img1">
-              <span class="menu__name">Для мясоедов</span>
-            </a>
-            <div class="menu__content">
-              <!-- <p class="menu__content-text">
+    <section class="section menu">
+      <h2 class="section-title section-title_menu">Меню</h2>
+      <ul class="menu__list">
+        <li class="menu__item">
+          <a href="#menu" class="menu__block menu__block-img1">
+            <span class="menu__name">Для мясоедов</span>
+          </a>
+          <div class="menu__content">
+            <p class="menu__content-text">
                   Речевой акт редуцирует диалектический характер. Развивая эту тему, заимствование редуцирует конструктивный механизм сочленений.
                   Лирический субъект начинает диссонансный анжамбеман. Наш современник стал особенно чутко относиться к слову, однако механизм
                   сочленений неустойчив. Модальность высказывания, как справедливо считает И.Гальперин, пространственно выбирает метр. Речевой
                   акт редуцирует диалектический характер. Развивая эту тему, заимствование редуцирует конструктивный механизм сочленений.
                   Лирический субъект начинает диссонансный анжамбеман. Наш современник стал особенно чутко относиться к слову.
-                </p> -->
-            </div>
-          </li>
-          <li class="menu__item">
-            <a href="#menu" class="menu__block menu__block-img2">
-              <span class="menu__name">Вегетарианское</span>
-            </a>
-            <div class="menu__content">
-              <!-- <p class="menu__content-text">
+                </p>
+          </div>
+        </li>
+        <li class="menu__item">
+          <a href="#menu" class="menu__block menu__block-img2">
+            <span class="menu__name">Вегетарианское</span>
+          </a>
+          <div class="menu__content">
+            <p class="menu__content-text">
                     Речевой акт редуцирует диалектический характер. Развивая эту тему, заимствование редуцирует конструктивный механизм сочленений.
                     Лирический субъект начинает диссонансный анжамбеман. Наш современник стал особенно чутко относиться к слову, однако механизм
                     сочленений неустойчив. Модальность высказывания, как справедливо считает И.Гальперин, пространственно выбирает метр. Речевой
                     акт редуцирует диалектический характер. Развивая эту тему, заимствование редуцирует конструктивный механизм сочленений.
                     Лирический субъект начинает диссонансный анжамбеман. Наш современник стал особенно чутко относиться к слову.
-                  </p> -->
-            </div>
-          </li>
-          <li class="menu__item">
-            <a href="#menu" class="menu__block menu__block-img3">
-              <span class="menu__name">Диетическое</span>
-            </a>
-            <div class="menu__content">
-              <!-- <p class="menu__content-text">
+                  </p>
+          </div>
+        </li>
+        <li class="menu__item">
+          <a href="#menu" class="menu__block menu__block-img3">
+            <span class="menu__name">Диетическое</span>
+          </a>
+          <div class="menu__content">
+            <p class="menu__content-text">
                       Речевой акт редуцирует диалектический характер. Развивая эту тему, заимствование редуцирует конструктивный механизм сочленений.
                       Лирический субъект начинает диссонансный анжамбеман. Наш современник стал особенно чутко относиться к слову, однако механизм
                       сочленений неустойчив. Модальность высказывания, как справедливо считает И.Гальперин, пространственно выбирает метр. Речевой
                       акт редуцирует диалектический характер. Развивая эту тему, заимствование редуцирует конструктивный механизм сочленений.
                       Лирический субъект начинает диссонансный анжамбеман. Наш современник стал особенно чутко относиться к слову.
-                    </p> -->
-            </div>
-          </li>
-        </ul>
+                    </p>
+          </div>
+        </li>
+      </ul>
 
 
 
-      </section>
-      <section class="section reviews">
-        <ul class="container reviews__list">
-          <li class="reviews__item">
-            <div class="reviews__img" style="background-image: url(./images/content/reviews/1.jpg)">
-            </div>  
-            <div class="reviews__content">
-              <div class="reviews__content-center">
-                <div class="reviews__title">
-                  Константин Спилберг
-                </div>
-                <div class="reviews__text">
-                  Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно забыть... Никогда не думал, что булочки могут быть такими
-                  мягкими, котлетка такой сочной, а сыр таким расплавленным.
-                </div>
-                <div class="reviews__button">
-                  <button class="button">Подробнее</button>
-                </div>
+    </section>
+    <section class="section reviews">
+      <ul class="container reviews__list">
+        <li class="reviews__item">
+          <div class="reviews__img" style="background-image: url(./images/content/reviews/1.jpg)">
+          </div>
+          <div class="reviews__content">
+            <div class="reviews__content-center">
+              <div class="reviews__title">
+                Константин Спилберг
+              </div>
+              <div class="reviews__text">
+                Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно забыть... Никогда не думал, что булочки могут быть такими
+                мягкими, котлетка такой сочной, а сыр таким расплавленным.
+              </div>
+              <div class="reviews__button">
+                <button class="button">Подробнее</button>
               </div>
             </div>
-          </li>
-          <li class="reviews__item">  
-            <div class="reviews__img" style="background-image: url(./images/content/reviews/2.jpg)">
-            </div>  
-            <div class="reviews__content">
-              <div class="reviews__content-center">
-                <div class="reviews__title">
-                  Константин Спилберг
-                </div>
-                <div class="reviews__text">
-                  Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно забыть... Никогда не думал, что булочки могут быть такими
-                  мягкими, котлетка такой сочной, а сыр таким расплавленным.
-                </div>
-                <div class="reviews__button">
-                  <button class="button">Подробнее</button>
-                </div>
+          </div>
+        </li>
+        <li class="reviews__item">
+          <div class="reviews__img" style="background-image: url(./images/content/reviews/2.jpg)">
+          </div>
+          <div class="reviews__content">
+            <div class="reviews__content-center">
+              <div class="reviews__title">
+                Константин Спилберг
+              </div>
+              <div class="reviews__text">
+                Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно забыть... Никогда не думал, что булочки могут быть такими
+                мягкими, котлетка такой сочной, а сыр таким расплавленным.
+              </div>
+              <div class="reviews__button">
+                <button class="button">Подробнее</button>
               </div>
             </div>
-          </li>
-          <li class="reviews__item">  
-            <div class="reviews__img" style="background-image: url(./images/content/reviews/3.jpg)">
-            </div>  
-            <div class="reviews__content">
-              <div class="reviews__content-center">
-                <div class="reviews__title">
-                  Константин Спилберг
-                </div>
-                <div class="reviews__text">
-                  Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно забыть... Никогда не думал, что булочки могут быть такими
-                  мягкими, котлетка такой сочной, а сыр таким расплавленным.
-                </div>
-                <div class="reviews__button">
-                  <button class="button">Подробнее</button>
-                </div>
+          </div>
+        </li>
+        <li class="reviews__item">
+          <div class="reviews__img" style="background-image: url(./images/content/reviews/3.jpg)">
+          </div>
+          <div class="reviews__content">
+            <div class="reviews__content-center">
+              <div class="reviews__title">
+                Константин Спилберг
+              </div>
+              <div class="reviews__text">
+                Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно забыть... Никогда не думал, что булочки могут быть такими
+                мягкими, котлетка такой сочной, а сыр таким расплавленным.
+              </div>
+              <div class="reviews__button">
+                <button class="button">Подробнее</button>
               </div>
             </div>
-          </li>
-          <li class="reviews__item"> 
-            <div class="reviews__img" style="background-image: url(./images/content/reviews/4.jpg)">
-            </div>  
-            <div class="reviews__content">
-              <div class="reviews__content-center">
-                <div class="reviews__title">
-                  Константин Спилберг
-                </div>
-                <div class="reviews__text">
-                  Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно забыть... Никогда не думал, что булочки могут быть такими
-                  мягкими, котлетка такой сочной, а сыр таким расплавленным.
-                </div>
-                <div class="reviews__button">
-                  <button class="button">Подробнее</button>
-                </div>
+          </div>
+        </li>
+        <li class="reviews__item">
+          <div class="reviews__img" style="background-image: url(./images/content/reviews/4.jpg)">
+          </div>
+          <div class="reviews__content">
+            <div class="reviews__content-center">
+              <div class="reviews__title">
+                Константин Спилберг
+              </div>
+              <div class="reviews__text">
+                Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно забыть... Никогда не думал, что булочки могут быть такими
+                мягкими, котлетка такой сочной, а сыр таким расплавленным.
+              </div>
+              <div class="reviews__button">
+                <button class="button">Подробнее</button>
               </div>
             </div>
-          </li>
-          <li class="reviews__item">  
-            <div class="reviews__img" style="background-image: url(./images/content/reviews/5.jpg)">
-            </div>  
-            <div class="reviews__content">
-              <div class="reviews__content-center">
-                <div class="reviews__title">
-                  Константин Спилберг
-                </div>
-                <div class="reviews__text">
-                  Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно забыть... Никогда не думал, что булочки могут быть такими
-                  мягкими, котлетка такой сочной, а сыр таким расплавленным.
-                </div>
-                <div class="reviews__button">
-                  <button class="button">Подробнее</button>
-                </div>
+          </div>
+        </li>
+        <li class="reviews__item">
+          <div class="reviews__img" style="background-image: url(./images/content/reviews/5.jpg)">
+          </div>
+          <div class="reviews__content">
+            <div class="reviews__content-center">
+              <div class="reviews__title">
+                Константин Спилберг
+              </div>
+              <div class="reviews__text">
+                Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно забыть... Никогда не думал, что булочки могут быть такими
+                мягкими, котлетка такой сочной, а сыр таким расплавленным.
+              </div>
+              <div class="reviews__button">
+                <button class="button">Подробнее</button>
               </div>
             </div>
-          </li>
-          <li class="reviews__item">  
-            <div class="reviews__img" style="background-image: url(./images/content/reviews/6.jpg)">
-            </div>
-              
-            <div class="reviews__content">
-              <div class="reviews__content-center">
-                <div class="reviews__title">
-                  Константин Спилберг
-                </div>
-                <div class="reviews__text">
-                  Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно забыть... Никогда не думал, что булочки могут быть такими
-                  мягкими, котлетка такой сочной, а сыр таким расплавленным.
-                </div>
-                <div class="reviews__button">
-                  <button class="button">Подробнее</button>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li class="reviews__item">
-            <div class="reviews__img" style="background-image: url(./images/content/reviews/7.jpg)">
-            </div>  
-              
-            <div class="reviews__content">
-              <div class="reviews__content-center">
-                <div class="reviews__title">
-                  Константин Спилберг
-                </div>
-                <div class="reviews__text">
-                  Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно забыть... Никогда не думал, что булочки могут быть такими
-                  мягкими, котлетка такой сочной, а сыр таким расплавленным.
-                </div>
-                <div class="reviews__button">
-                  <button class="button">Подробнее</button>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li class="reviews__item">  
-            <div class="reviews__img" style="background-image: url(./images/content/reviews/8.jpg)">
-            </div>
-              
-            <div class="reviews__content">
-              <div class="reviews__content-center">
-                <div class="reviews__title">
-                  Константин Спилберг
-                </div>
-                <div class="reviews__text">
-                  Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно забыть... Никогда не думал, что булочки могут быть такими
-                  мягкими, котлетка такой сочной, а сыр таким расплавленным.
-                </div>
-                <div class="reviews__button">
-                  <button class="button">Подробнее</button>
-                </div>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </section>
+          </div>
+        </li>
+        <li class="reviews__item">
+          <div class="reviews__img" style="background-image: url(./images/content/reviews/6.jpg)">
+          </div>
 
-      <section class="section delivery">
-        <div class="container delivery__wrap">
-          <h2 class="section-title delivery-title">Закажите доставку</h2>
-          <form class="form__delivery" method="post">
-            <div class="form__block">
-              <div class="form__block-row">
-                <label class="form__name">
-                  <div class="form__elem-title">
-                    Имя
-                  </div>
-                  <input type="text" value="" class="form__input-text">
-                </label>
-                <label class="form__tel">
-                  <div class="form__elem-title">
-                    Телефон
-                  </div>
-                  <input type="text" value="" class="form__input-text">
-                </label>
+          <div class="reviews__content">
+            <div class="reviews__content-center">
+              <div class="reviews__title">
+                Константин Спилберг
               </div>
-              <div class="form__block-row">
-                <label class="form__street">
-                  <div class="form__elem-title">
-                    Улица
-                  </div>
-                  <input type="text" value="" class="form__input-text">
-                </label>
+              <div class="reviews__text">
+                Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно забыть... Никогда не думал, что булочки могут быть такими
+                мягкими, котлетка такой сочной, а сыр таким расплавленным.
               </div>
-              <div class="form__block-row">
-                <label class="form__adress">
-                  <div class="form__elem-title">
-                    Дом
-                  </div>
-                  <input type="text" value="" class="form__input-text">
-                </label>
-                <label class="form__adress">
-                  <div class="form__elem-title">
-                    Корпус
-                  </div>
-                  <input type="text" value="" class="form__input-text">
-                </label>
-                <label class="form__adress">
-                  <div class="form__elem-title">
-                    Квартира
-                  </div>
-                  <input type="text" value="" class="form__input-text">
-                </label>
-                <label class="form__adress">
-                  <div class="form__elem-title">
-                    Этаж
-                  </div>
-                  <input type="text" value="" class="form__input-text">
-                </label>
+              <div class="reviews__button">
+                <button class="button">Подробнее</button>
               </div>
             </div>
-            <div class="form__block">
-              <div class="form__block-row">
-                <label class="form__textarea-label">
-                  <div class="form__elem-title">
-                    Комментарий
-                  </div>
-                  <textarea class="form__textarea"></textarea>
-                </label>
+          </div>
+        </li>
+        <li class="reviews__item">
+          <div class="reviews__img" style="background-image: url(./images/content/reviews/7.jpg)">
+          </div>
+
+          <div class="reviews__content">
+            <div class="reviews__content-center">
+              <div class="reviews__title">
+                Константин Спилберг
               </div>
-              <div class="form__block-row-fs form__block-row-fs_first">
-                <label class="form__radio">
-                  <input type="radio" class="form__radio-button" value="yes" name="form__pay">
-                  <span class="form__button-text">Потребуется сдача</span>
-                </label>
-                <label class="form__radio form__radio-last">
-                  <input type="radio" class="form__radio-button " value="no" name="form__pay">
-                  <span class="form__button-text">Оплата по карте</span>
-                </label>
+              <div class="reviews__text">
+                Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно забыть... Никогда не думал, что булочки могут быть такими
+                мягкими, котлетка такой сочной, а сыр таким расплавленным.
               </div>
-              <div class="form__block-row-fs">
-                <label class="form__checkbox">
-                  <input type="checkbox" class="form__checkbox-button" value="1">
-                  <span class="form__checkbox-text">Не перезванивать</span>
-                </label>
-              </div>
-              <div class="form__block-row-fs form__block-button">
-                <button class="button" type="submit">Заказать</button>
-                <button class="form__reset" type="reset">Очистить</button>
+              <div class="reviews__button">
+                <button class="button">Подробнее</button>
               </div>
             </div>
-          </form>
-        </div>
-      </section>
+          </div>
+        </li>
+        <li class="reviews__item">
+          <div class="reviews__img" style="background-image: url(./images/content/reviews/8.jpg)">
+          </div>
 
-      <section class="section map">
-        <footer class="footer">
+          <div class="reviews__content">
+            <div class="reviews__content-center">
+              <div class="reviews__title">
+                Константин Спилберг
+              </div>
+              <div class="reviews__text">
+                Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно забыть... Никогда не думал, что булочки могут быть такими
+                мягкими, котлетка такой сочной, а сыр таким расплавленным.
+              </div>
+              <div class="reviews__button">
+                <button class="button">Подробнее</button>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
 
-        </footer>
-      </section>
+    <section class="section delivery">
+      <div class="container delivery__wrap">
+        <h2 class="section-title delivery-title">Закажите доставку</h2>
+        <form action="server.php" id="order-form" class="form__delivery" method="post">
+          <div class="form__block">
+            <div class="form__block-row">
+              <label for="user-name" class="form__name">
+                <div class="form__elem-title">
+                  Имя
+                </div>
+                <input id="user-name" name="user-name" type="text" value="" class="form__input-text">
+              </label>
+              <label for="user-phone" class="form__tel">
+                <div class="form__elem-title">
+                  Телефон
+                </div>
+                <input id="user-phone" name="user-phone" type="text" value="" class="form__input-text">
+              </label>
+            </div>
+            <div class="form__block-row">
+              <label for="user-street" class="form__street">
+                <div class="form__elem-title">
+                  Улица
+                </div>
+                <input id="user-street" name="user-street" type="text" value="" class="form__input-text">
+              </label>
+            </div>
+            <div class="form__block-row">
+              <label for="user-adress" class="form__adress">
+                <div class="form__elem-title">
+                  Дом
+                </div>
+                <input id="user-adress" name="user-adress" type="text" value="" class="form__input-text">
+              </label>
+              <label for="user-block" class="form__adress">
+                <div class="form__elem-title">
+                  Корпус
+                </div>
+                <input id="user-block" name="user-block" type="text" value="" class="form__input-text">
+              </label>
+              <label for="user-apartment" class="form__adress">
+                <div class="form__elem-title">
+                  Квартира
+                </div>
+                <input id="user-apartment" name="user-apartment" type="text" value="" class="form__input-text">
+              </label>
+              <label for="user_floor" class="form__adress">
+                <div class="form__elem-title">
+                  Этаж
+                </div>
+                <input id="user_floor" name="user_floor" type="text" value="" class="form__input-text">
+              </label>
+            </div>
+          </div>
+          <div class="form__block">
+            <div class="form__block-row">
+              <label for="user-comment" class="form__textarea-label">
+                <div class="form__elem-title">
+                  Комментарий
+                </div>
+                <textarea id="user-comment" name="user-comment" class="form__textarea"></textarea>
+              </label>
+            </div>
+            <div class="form__block-row-fs form__block-row-fs_first">
+              <label for="user-odd-money" class="form__radio">
+                <input id="user-odd-money" name="user-odd-money" type="radio" class="form__radio-button" value="yes" name="form__pay">
+                <span class="form__button-text">Потребуется сдача</span>
+              </label>
+              <label for="user-card" class="form__radio form__radio-last">
+                <input id="user-card" name="user-card" type="radio" class="form__radio-button " value="no" name="form__pay">
+                <span class="form__button-text">Оплата по карте</span>
+              </label>
+            </div>
+            <div class="form__block-row-fs">
+              <label for="user-no-callback" class="form__checkbox">
+                <input id="user-no-callback" name="user-no callback" type="checkbox" class="form__checkbox-button" value="1">
+                <span class="form__checkbox-text">Не перезванивать</span>
+              </label>
+            </div>
+            <div class="form__block-row-fs form__block-button">
+              <button  class="button" type="submit">Заказать</button>
+              <button class="form__reset" type="reset">Очистить</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
 
-    </div>
+    <section class="section map">
+      <div class="yandex__map" id="map"></div>
+      <footer class="footer">
+
+      </footer>
+    </section>
+
+  </div>
   </div>
   <ul class="scroll-menu">
     <li class="scroll-menu__item"></li>
@@ -872,6 +1271,8 @@
   </ul>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+  <script src="js/plugins/jquery.fancybox.min.js"></script>
   <script src="js/main.js"></script>
 </body>
 

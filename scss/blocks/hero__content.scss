@@ -1,5 +1,7 @@
 .hero__container {
   display: flex;
+  flex: 1;
+  align-items: center;
   
   @include tablets() {
     flex-direction: column;
@@ -29,12 +31,11 @@
   max-width: rem(631px);
   max-height: rem(750px);
   width: 100%;
-  height: 100%;
+  height: auto;
 }
 
 .hero__text {
   width: rem(428px);
-  padding-top: rem(100px);
 
   @include tablets () {
     padding-top: rem(95px);

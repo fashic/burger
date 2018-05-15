@@ -1,0 +1,72 @@
+
+
+// Arrow
+
+
+.button__slick{
+    position: relative;
+    float: right;
+    margin-bottom: 20px;
+  
+    li{
+
+        position: absolute;
+        bottom: 293px;
+        cursor: pointer;
+        display: block;
+        height: 15px;
+        width: 30px;
+        background: url(../images/icons/arrow-scroll.svg) no-repeat;
+
+      &.prev {
+        transform: rotate(90deg);
+        left: 39px;
+
+        @include phones() {
+            left: 2px;
+            bottom: 376px;
+        }
+      }
+
+      &.next {
+        transform: rotate(270deg);
+        right: 39px;
+
+        @include phones() {
+            right: 4px;
+            bottom: 377px;
+        }
+      }
+
+    }
+}
+
+// Slider
+
+
+.slick-list {
+    height: 80%;
+
+    @include laptop {
+        height: 100%;
+    }
+}
+
+.slick-track {
+    @include tablets() {
+        height: 100%;
+    }
+}
+
+.slick-slide {
+
+    @include laptop(){
+           padding-top: 188px;
+    }
+}
+
+.slick-initialized .slick-slide {
+    display: flex;
+    justify-content: center;
+}
+

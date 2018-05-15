@@ -28,6 +28,7 @@
 
   @include tablets() {
     align-items: center;
+    margin-bottom: 178px;
   }
 
   @include phones() {

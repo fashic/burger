@@ -81,10 +81,16 @@
 }
 
 .menu__content {
-  width: 0px;
-  height: 100%;
+  width: 0;
+  // heights: 0;
   @include ubuntu();
   font-size: 0.875rem;
   font-weight: 300;
   background-color: rgba(47,50,52,.9);
+  transform: translate(500);
+
+  &.active {
+    width: 100%;
+  }
+
 }

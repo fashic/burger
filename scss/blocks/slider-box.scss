@@ -49,17 +49,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
-    // width: rem(10000px);
+    width: 100%;
+    height: 95%;
 }
 
 .slider-box__item {
     position: relative;
-    display: block;
-    // float: left;
+    display: block;;
     max-width: rem(960px);
     width: 100vw;
     min-height: rem(470px);
+    padding-top: rem(9px);
+    padding-right: 5%;
+    padding-left: 5%;
 
     @include tablets() {
       margin-bottom: rem(128px);  
@@ -72,6 +74,7 @@
 .slider-box__content {
     display: flex;
     min-height: rem(470px);
+    height: 300px;
 
     @include tablets() {
         flex-direction: column;
@@ -80,9 +83,6 @@
 }
 
 .slider-box__left {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 49%;
     height: 100%;
 
@@ -93,50 +93,60 @@
 
 .slider-box__left-img {
     position: relative;
-    top: rem(47px);
-    left: rem(-18px);
-    display: flex;
-    width: 107%;
-    height: 100%;
-    padding-top: rem(21px);
+    bottom: rem(-81px);
+    right: rem(71px);
+    width: 120%;
+    height: auto;
+
+    @include laptop() {
+        width: 104%;
+        margin-left: 77px;
+        margin-top: 41px;
+    }
 
     @include tablets() {
-        width: 68%;
-        right: rem(30px);
-        top: rem(168px);
+        width: 73%;
+        right: -12px;
+        top: 143px;
     }
 
     @include phones() {
-        left: rem(-2px);
-        top: rem(111px);
-        width: 85%;
+        left: 13px;
+        width: 94%;
+        top: 81px;
+        margin: 0;
     }
 }
 
 .slider-box__right {
     position: relative;
-    bottom: rem(5px);
     left: rem(10px);
     width: 51%;
     min-height: rem(470px);
+    padding-left: rem(11px);
+
+    @include laptop() {
+    }
 
     @include tablets() {
         display: flex;
         text-align: center;
         flex-direction: column;
         width: 100%;
-        padding-top: rem(197px);
-        padding-right:  rem(123px);
         padding-bottom: rem(94px);
-        padding-left: rem(72px);
+        padding-top: 168px;
+        padding-left: 20px;
+        padding-right: 69px;
+        left: 25px;
     }
 
     @include phones() {
-        padding-top: rem(127px);
-        padding-left: rem(20px);
         padding-bottom: 0;
-        padding-right: rem(20px);
+        padding-top: 92px;
+        padding-left: 0;
+        padding-right: 0;
         left: 0;
+
     }
 }
 
@@ -146,12 +156,13 @@
     color: white;
     font-size: rem(70px);
     line-height: rem(64px);
-    vertical-align: top;
-    padding-bottom: rem(35px);
+    padding-bottom: rem(40px);
     letter-spacing: rem(1px);
 
     @include tablets() {
-        padding: 0 rem(60px) rem(19px);
+        padding-left: 70px;
+        padding-right: 70px;
+        padding-bottom: 28px;
     }
 
     @include phones() {
@@ -163,15 +174,25 @@
 
 .slider-box__text {
     padding-bottom: rem(1px);
+    padding-right: 50px;
     @include ubuntu();
     color: white;
     font-size: rem(14px);
     line-height: rem(24px);
 
+    @include laptop() {
+        padding-right: 0;
+    }
+
+    @include tablets() {
+        padding: 0 0 19px;
+    }
+
     @include phones() {
-        margin-bottom: 0px;
+        margin-bottom: -4px;
         font-size: rem(18px);
         line-height: rem(30px);
+        padding: 0;
     }
 }
 .slider-order__wrap {
@@ -195,7 +216,7 @@
     padding-right: rem(15px);
 
     @include tablets() {
-        padding-right: rem(26px);
+        padding-right: 29px;;
     }
 
     @include phones() {
@@ -234,19 +255,25 @@
 .slider-box__kkal {
     position: absolute;
     bottom: rem(10px);
-    left: rem(1px);
+    left: rem(10px);
 
     @include tablets() {
         top: 120px;
         left: 544px;
     }
+
+    @include phones() {
+        top: -154px;
+        left: 408px;
+    }
 }
 
 .slider-box__kkal-svg {
-    width: rem(60px);
-    height: rem(60px);
+    width: 60px;
+    height: 60px;
     fill: rgb(255, 255, 255);
     opacity: 0.5;
+
 }
 
 .slider-box__kkal-value, .slider-box__kkal-text {
@@ -257,10 +284,22 @@
     top: rem(25px);
     left: rem(15px);
     font-size: rem(19px);
+
+    @include phones() {
+        font-size: 18px;
+        top: 26px;
+        left: 16px;
+    }
 }
 
 .slider-box__kkal-text {
     top: rem(61px);
     left: rem(17px);
     font-size: rem(13px);
+
+    @include phones() {
+        font-size: 13px;
+        top: 60px;
+        left: 17px;
+    }
 }
