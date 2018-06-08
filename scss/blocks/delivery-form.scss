@@ -6,8 +6,12 @@
   @include tablets() {
     flex-direction: column;
     align-items: center;
-    padding-bottom: 167px;
-    padding-top: 58px;
+    padding-bottom: rem(167px);
+    padding-top: rem(58px);
+  }
+
+  @include phones() {
+    padding-top: rem(20px);
   }
 }
 

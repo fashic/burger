@@ -88,9 +88,14 @@
   font-weight: 300;
   background-color: rgba(47,50,52,.9);
   transform: translate(500);
+  overflow: hidden;
+  color: #fff;
 
   &.active {
     width: 100%;
   }
+}
 
+.menu__content-text {
+  padding: 30px 50px;
 }

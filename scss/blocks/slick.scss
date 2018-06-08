@@ -22,6 +22,10 @@
         transform: rotate(90deg);
         left: 39px;
 
+        @include tablets() {
+            bottom: 470px;
+        }
+
         @include phones() {
             left: 2px;
             bottom: 376px;
@@ -31,6 +35,10 @@
       &.next {
         transform: rotate(270deg);
         right: 39px;
+
+        @include tablets() {
+            bottom: 470px;
+        }
 
         @include phones() {
             right: 4px;
@@ -45,16 +53,18 @@
 
 
 .slick-list {
-    height: 80%;
+    height: 80% !important;
 
-    @include laptop {
-        height: 100%;
+    @include tablets() {
+        height: 100% !important;
     }
+
+
 }
 
 .slick-track {
     @include tablets() {
-        height: 100%;
+        height: 100% !important;
     }
 }
 

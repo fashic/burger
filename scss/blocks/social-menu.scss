@@ -1,0 +1,36 @@
+.social__menu {
+    @include phones() {
+        padding-bottom: 20px;
+    }
+}
+
+.social__menu-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.social__menu-item {
+    margin-right: rem(19px);
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.social__menu-icon {
+    width: rem(21px);
+    height: rem(21px);
+    fill: #fff;
+    opacity: 0.3;
+
+    @include phones() {
+        width: rem(25px);
+        height: rem(25px);
+    }
+
+    &:hover {
+        opacity: 1;
+    }
+}

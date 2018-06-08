@@ -1,0 +1,26 @@
+.footer {
+    background: url("../images/bg/footer.jpg") center center no-repeat;
+    background-size: cover;
+    height: 9%;
+    min-height: rem(60px);
+    padding: 0 5rem;
+
+    @include tablets() {
+        height: 6%;
+    }
+
+    @include phones() {
+        height: 15%;
+    }
+}
+
+.footer__wrap {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+
+    @include phones() {
+        flex-direction: column;
+    }
+}

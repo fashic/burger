@@ -1,12 +1,12 @@
 .tooltip {
-    top: rem(20px);
-    left: rem(13px);
+    top: rem(16px);
+    left: rem(10px);
     position: absolute;
     display: flex;
 
     @include tablets() {
         top: -70px;
-        left: 149px;
+        left: 147px;
     }
 
     @include phones() {
@@ -31,7 +31,7 @@
     }
     &:hover + .tooltip__content{
         left: rem(90px);
-        top: rem(8px);
+        top: rem(-1px);
         width: rem(270px);
         height: rem(332px);
     }

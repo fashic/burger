@@ -1,0 +1,50 @@
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    height: 100%;
+    font-size: 14px;
+    font-weight: 400;
+
+    @include phones() {
+        align-items: center;
+    }
+}
+
+.info__address {
+    color: #fff;
+}
+
+.info__tel {
+    position: relative;
+    color: #e45028;
+    padding-left: rem(20px);
+    padding-top: rem(7px);
+    max-width: 17%;
+    font-weight: 600;
+
+    @include tablets() {
+        max-width: 33%;
+      }
+
+    @include phones() {
+        max-width: 100%;
+    }
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: rem(9px);
+        left: 0;
+        display: block;
+        width: .8125rem;
+        height: .8125rem;
+        background: url(../../images/icons/phone.svg) no-repeat;
+        background-position: center;
+
+        @include phones() {
+            top: rem(12px);
+        }
+    }
+}

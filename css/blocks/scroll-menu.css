@@ -1,0 +1,9 @@
+.scroll-menu__linkbefore {
+  position: absolute;
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #fff;
+  top: 0;
+  right: 0; }

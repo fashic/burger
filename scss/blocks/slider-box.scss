@@ -258,13 +258,13 @@
     left: rem(10px);
 
     @include tablets() {
-        top: 120px;
-        left: 544px;
+        top: -70px;
+        left: 560px;
     }
 
     @include phones() {
-        top: -154px;
-        left: 408px;
+        top: rem(-180px);
+        left: rem(925px);
     }
 }
 
